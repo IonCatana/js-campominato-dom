@@ -5,8 +5,16 @@
 // difficoltà 3 => tra 1 e 49
 
 // Creare le variabili
-const gameWrapper = document.getElementById('wrapper'); 
+const gameWrapper = document.getElementById('wrapper');
 let numberGrid;
 let bombList = [];
 let result = document.querySelector('.result');
 let score = 0;
+
+// Formula
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
