@@ -23,7 +23,7 @@ img {
 }
 header .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 select {
@@ -74,9 +74,13 @@ main {
 .result {
   color: black;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 .flag-md{
   width: 30px;
+  vertical-align: middle;
+}
+a{
+  text-decoration: none;
 }

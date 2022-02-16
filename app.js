@@ -61,13 +61,13 @@ function getGrid(numberGrid) {
 //Creare la funzione Winner
 function endGameWin() {
   gameWrapper.removeEventListener('click', selectThisGrid);
-  result.innerHTML = `Hai vinto! Il tuo punteggio è ${score}`;
+  result.innerHTML = `Hai vinto TUTOR! Il tuo punteggio è ${score} GRANDE`;
 }
 
 //Creare la funzione GameOver
 function endGameLose() {
   gameWrapper.removeEventListener('click', selectThisGrid);
-  result.innerHTML = `Hai perso! Il tuo punteggio è ${score}`;
+  result.innerHTML = `Hai perso TUTOR! Il tuo punteggio è ${score}, riprova!`;
 }
 
 //Creare la bomba rivelazione
