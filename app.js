@@ -67,7 +67,7 @@ function endGameWin() {
 //Creare la funzione GameOver
 function endGameLose() {
   gameWrapper.removeEventListener('click', selectThisGrid);
-  result.innerHTML = `Hai perso TUTOR :-(! Il tuo punteggio è ${score}, riprova...!`;
+  result.innerHTML = `Hai perso TUTOR! Il tuo punteggio è ${score}, riprova...!`;
 }
 
 //Creare la bomba rivelazione
@@ -76,6 +76,7 @@ function bombReveal() {
   for (let i = 0; i < cells.length; i++) {
     if (bombList.includes(parseInt(cells[i].innerHTML))) {
       cells[i].classList.add('bomb');
+      console.log(cells)
     }
   }
 }
@@ -105,6 +106,7 @@ function play() {
   createBomb();
   score = 0;
   gameWrapper.addEventListener('click', selectThisGrid);
+  result.innerHTML = '';
 }
 
 document.getElementById('play').addEventListener('click', play);
