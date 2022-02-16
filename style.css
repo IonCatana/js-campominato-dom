@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-img{
+img {
   width: 100%;
 }
 .container {
@@ -26,8 +26,11 @@ header .row {
   justify-content: space-between;
   align-items: center;
 }
-select{
+select {
   width: 150px;
+}
+button{
+  padding: 0 15px;
 }
 .logo {
   width: 100px;
@@ -71,6 +74,9 @@ main {
 .result {
   color: black;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 30px;
   text-align: center;
+}
+.flag-md{
+  width: 30px;
 }
