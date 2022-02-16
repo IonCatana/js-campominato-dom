@@ -17,6 +17,7 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 //Creare la bomb list
 function createBomb() {
   bombList = [];
@@ -28,6 +29,7 @@ function createBomb() {
   }
   console.log(bombList);
 }
+
 //Creare la difficoltá da scegliere
 function getGameMode() {
   let gameMode = document.getElementById('difficulty').value;
@@ -42,6 +44,7 @@ function getGameMode() {
   console.log(numberGrid);
   return numberGrid;
 }
+
 //Creare number grid
 function getGrid(numberGrid) {
   gameWrapper.innerHTML = '';
@@ -54,16 +57,19 @@ function getGrid(numberGrid) {
     squareWrapper.append(i);
   }
 }
+
 //Creare la funzione Winner
 function endGameWin() {
   gameWrapper.removeEventListener('click', selectThisGrid);
   result.innerHTML = `Hai vinto! Il tuo punteggio è ${score}`;
 }
+
 //Creare la funzione GameOver
 function endGameLose() {
   gameWrapper.removeEventListener('click', selectThisGrid);
   result.innerHTML = `Hai perso! Il tuo punteggio è ${score}`;
 }
+
 //Creare la bomba rivelazione
 function bombReveal() {
   let cells = document.getElementsByClassName('element');
@@ -73,6 +79,7 @@ function bombReveal() {
     }
   }
 }
+
 //Creare callback event
 function selectThisGrid(event) {
   const squareWrapper = event.target;
@@ -90,6 +97,7 @@ function selectThisGrid(event) {
   }
   console.dir(squareWrapper);
 }
+
 // la funzione game play
 function play() {
   getGameMode();
@@ -98,6 +106,5 @@ function play() {
   score = 0;
   gameWrapper.addEventListener('click', selectThisGrid);
 }
-
 
 document.getElementById('play').addEventListener('click', play);
