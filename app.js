@@ -73,4 +73,31 @@ function bombReveal() {
     }
   }
 }
+//Creare callback event
+function selectThisGrid(event) {
+  const squareWrapper = event.target;
+  if (bombList.includes(parseInt(squareWrapper.innerHTML))) {
+    squareWrapper.classList.add('bomb');
+    endGameLose();
+    bombReveal();
+  } else if (!squareWrapper.classList.contains('selected')) {
+    squareWrapper.classList.add('selected');
+    score = score + 1;
+    if (score == Math.pow(numberGrid, 2) - 16) {
+      endGameWin();
+      bombReveal();
+    }
+  }
+  console.dir(squareWrapper);
+}
+// la funzione game play
+function play() {
+  getGameMode();
+  getGrid(numberGrid);
+  createBomb();
+  score = 0;
+  gameWrapper.addEventListener('click', selectThisGrid);
+}
 
+
+document.getElementById('play').addEventListener('click', play);
