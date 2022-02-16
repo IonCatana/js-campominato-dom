@@ -67,7 +67,7 @@ function endGameWin() {
 //Creare la funzione GameOver
 function endGameLose() {
   gameWrapper.removeEventListener('click', selectThisGrid);
-  result.innerHTML = `Hai perso TUTOR! Il tuo punteggio è ${score}, riprova!`;
+  result.innerHTML = `Hai perso TUTOR :-(! Il tuo punteggio è ${score}, riprova...!`;
 }
 
 //Creare la bomba rivelazione
