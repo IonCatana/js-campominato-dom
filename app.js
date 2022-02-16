@@ -11,7 +11,7 @@ let bombList = [];
 let result = document.querySelector('.result');
 let score = 0;
 
-// Formula
+// Formula per i numeri random
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -54,5 +54,23 @@ function getGrid(numberGrid) {
     squareWrapper.append(i);
   }
 }
-
+//Creare la funzione Winner
+function endGameWin() {
+  gameWrapper.removeEventListener('click', selectThisGrid);
+  result.innerHTML = `Hai vinto! Il tuo punteggio è ${score}`;
+}
+//Creare la funzione GameOver
+function endGameLose() {
+  gameWrapper.removeEventListener('click', selectThisGrid);
+  result.innerHTML = `Hai perso! Il tuo punteggio è ${score}`;
+}
+//Creare la bomba rivelazione
+function bombReveal() {
+  let cells = document.getElementsByClassName('element');
+  for (let i = 0; i < cells.length; i++) {
+    if (bombList.includes(parseInt(cells[i].innerHTML))) {
+      cells[i].classList.add('bomb');
+    }
+  }
+}
 
